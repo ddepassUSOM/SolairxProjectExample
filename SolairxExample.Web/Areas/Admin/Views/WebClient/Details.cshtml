@@ -1,0 +1,52 @@
+﻿@model SolairxExample.Model.WebClient
+
+<div class="row pt-3">
+    <div class="col-md-12 border-1">
+        <form class="row">
+            <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
+            <div class="col-md-6">
+                <label asp-for="FirstName" class="ms-2 text-muted required">First Name</label>
+                <input asp-for="FirstName" class="form-control" placeholder="" />
+                <span asp-validation-for="FirstName" class="text-danger"></span>
+            </div>
+            <div class="col-md-6">
+                <label asp-for="LastName" class="ms-2 text-muted required">Last Name</label>
+                <input asp-for="LastName" class="form-control" placeholder="" />
+                <span asp-validation-for="LastName" class="text-danger"></span>
+            </div>
+            <div class="col-md-6">
+                <label asp-for="Email" class="ms-2 text-muted required">Email</label>
+                <input asp-for="Email" class="form-control" placeholder="" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="col-md-6">
+                <label asp-for="Phone" class="ms-2 text-muted required">Telephone</label>
+                <input asp-for="Phone" class="form-control" placeholder="" />
+                <span asp-validation-for="Phone" class="text-danger"></span>
+            </div>
+            <div class="col-md-6">
+                <label class="ms-2 text-muted">What needs to be done?</label>
+                @Html.ListBox("wcJobs", ViewBag.wcJobs as SelectList, new { @class = "form-control" })
+                @Html.ValidationMessage("wcJobs", "", new { @class = "text-danger" })
+            </div>
+
+            <div class="col-md-3 pt-4 form-check">
+                <input id="CommercialResident" type="radio" name="CommercialResident" value="true" checked="checked" class="form-check-input ms-2 Res" />
+                <label for="CommercialResident" class="form-check-label ms-2 text-muted"> Residential</label>
+            </div>
+            <div class="col-md-3 pt-4 form-check">
+                <input id="CommercialResident" type="radio" name="CommercialResident" value="false" class="form-check-input Com" />
+                <label for="CommercialResident" class="form-check-label ms-2 text-muted"> Commercial</label>
+                <span asp-validation="CommercialResident" class="text-danger"></span>
+            </div>
+            <div class="col-md-12">
+                <label asp-for="Message" class="ms-2 text-muted">Message</label>
+                <div class="textarea"> @Html.Raw(Model.Message) </div>
+               @*  <textarea asp-for="Message">@Html.Raw(Model.Message)</textarea> *@
+                <span asp-validation-for="Message" class="text-danger"></span>
+           @*      <div class="textarea"> @Html.Raw(Model.NOTE) </div> *@
+            </div>         
+
+        </form>
+    </div>
+</div>

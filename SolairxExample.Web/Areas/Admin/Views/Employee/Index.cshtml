@@ -1,0 +1,49 @@
+﻿@model IEnumerable<SolairxExample.Model.Employee>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <div class="col-4"><h1>Employees</h1></div>
+    <div class="col-4"></div>
+    <div class="col-4"><a asp-action="Create" class="btn btn-primary">Create New</a></div>
+</div>
+<br />
+<br />
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.Label("Last Name, First Name")
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CreateDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Position)
+            </th>
+            <th>Admin</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.EmplyeeId">@item.LastName, @item.FirstName</a>
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CreateDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Position.PositionName)
+                </td>
+                <td>
+                    <a asp-action="Delete" asp-route-id="@item.EmplyeeId">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

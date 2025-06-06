@@ -1,0 +1,10 @@
+﻿@model IEnumerable<SolairxExample.Model.Project>
+<h3>Our Latest Work</h3>
+<div class="portfolio-item" id="ProgList">
+    @foreach (var item in Model)
+    {
+        <div class="portfolio-image">
+            <a asp-action="Details" asp-route-projectId="@item.ProjectId"><i class="bi bi-building"></i>@item.ProjectName</a><br />
+        </div>
+    }
+</div>

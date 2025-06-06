@@ -1,0 +1,42 @@
+﻿@model IEnumerable<SolairxExample.Model.Project>
+
+@{
+    ViewData["Title"] = "Portfolios";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<br />
+<h1 class="mt-4 mb-3">
+    Portfolio
+    <small>Latest work</small>
+</h1>
+<ol class="breadcrumb">
+    <li class="breadcrumb-item">
+        <a href="@Url.Action("Index", "Home")">Home</a>
+    </li>
+    <li class="breadcrumb-item active">Portfolio</li>
+</ol>
+<div class="row">
+    @foreach (var item in Model)
+    {
+
+        <div class="col-lg-6 portfolio-item">
+            <div class="card h-100">
+
+                <a asp-action="Details" asp-route-projectId="@item.ProjectId">
+                  @*   <img class="card-img-top" src="@Url.Content(item.ProjectImage1)" alt=""> *@
+                </a>
+                <div class="card-body">
+                    <h4 class="card-title">
+                        <a asp-action="Details" asp-route-projectId="@item.ProjectId">@item.ProjectName</a>
+                    </h4>
+                    <p class="card-text">
+                        @Html.Raw(item.ProjectShortDesc)
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    }
+</div>
+

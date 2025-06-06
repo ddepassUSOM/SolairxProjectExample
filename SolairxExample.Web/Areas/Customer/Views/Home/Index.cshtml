@@ -1,0 +1,49 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_HomeLayoutPage.cshtml";
+}
+<h1 class="my-4">What we do and how we can help you...</h1>
+<p>
+    At SolairX Services we pride ourselves on creating custom solar energy solutions that fit your needs for home and commercial buildings. What you want matters! Our team will work with you to create solutions right for you at affordable and fair prices. The right environmentally friendly solutions for you. We are your one-stop shop for all your solar needs. We specialize in distributing our top-of-the-line solar equipment to home and businesses all over Jamaica. If you need to power one device or your entire business, we can perform seamless installation and walk you through all the necessary steps for correctly caring for your solar system.
+</p>
+<!-- Marketing Icons Section -->
+<div class="row">
+    <div class="col-lg-6 mb-6">
+        <div class="card h-100">
+            <h4 class="card-header">Residential</h4>
+            <div class="card-body">
+                <p class="card-text">
+                    We cater to your residential solar or wind energy needs. We create an energy-efficient solution based upon your budget. Whether you need a starter system, full system solution, repairs to your existing system, or routine maintenance service, we do it all. So, stop overpaying for power and take advantage of the sun and wind.
+                </p>
+            </div>
+            <div class="card-footer">
+                <a href='@Url.Action("Services","Home")' class="btn btn-outline-primary">Learn More</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-6 mb-6">
+        <div class="card h-100">
+            <h4 class="card-header">Commercial</h4>
+            <div class="card-body">
+                <p class="card-text">
+                    We have teamed up with some of the top PV Solar and ESS storage equipment companies in the world. We provide premium quality energy packages, maintenance, and service packages. Whether you need a 5KWh solar grid tie or a 5MWh solar Energy storage system we can give you best in class solution and the best prices packages.
+                </p>
+            </div>
+            <div class="card-footer">
+
+                <a href='@Url.Action("Services","Home")' class="btn btn-outline-primary">Learn More</a>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<hr>
+<!-- Call to Action Section -->
+<div class="row mb-4">
+    <div class="col-md-4">
+        <a class="btn btn-lg btn-outline-success btn-block" href="@Url.Action("Contact", "Home")">Contact Us!</a>
+    </div>
+</div>
+

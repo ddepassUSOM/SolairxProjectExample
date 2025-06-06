@@ -1,0 +1,105 @@
+﻿@model ProjectVM
+
+<link href="~/css/dropdownliststyle.css" rel="stylesheet" />
+@* <link href="~/lib/summernote/summernote.css" rel="stylesheet" />
+<link href="~/lib/summernote/summernote-bs4.css" rel="stylesheet" /> *@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.20/summernote-bs5.min.css" />
+<div class="card shadow border-0 my-4">
+    <div class="card-header bg-secondary bg-gradient m-lg-0 py-3">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h2 class="text-white py-2">@(Model.Project.ProjectId != 0 ? "Update" : "Create") Project</h2>
+            </div>
+        </div>
+    </div>
+    <div class="card-body p-4">
+        <form method="post" class="row" enctype="multipart/form-data">
+            <input asp-for="Project.ProjectId" hidden />
+            @*    <input asp-for="Product.ImageUrl" hidden /> *@
+            <div class="row">
+                <div class="col-10">
+                    <div class="border p-3">
+                        @*  <div asp-validation-summary="ModelOnly"></div> *@
+                       
+                        <div class="form-floating py-2 col-12">                          
+                            <input asp-for="Project.ProjectName" class="form-control border-0 shadow" />
+                            <label asp-for="Project.ProjectName" class="ms-2">Project Name</label>
+                            <span asp-validation-for="Project.ProjectName" class="text-danger"></span>
+                        </div>
+                        <div class="form-floating py-2 col-12">
+                            <select asp-for="@Model.Project.ProjectManager" asp-items="@Model.ProjectManagerList" class="form-select border-0 shadow">
+                                <option disabled selected>--Select Category--</option>
+                            </select>
+                            <label asp-for="Project.ProjectManager" class="ms-2"></label>
+                            <span asp-validation-for="Project.ProjectManager" class="text-danger"></span>
+                        </div>
+                        <div class="py-2 col-12">
+                            <label asp-for="Project.ProjectShortDesc" class="ms-2 text-muted">Short Description</label>
+                            <TextArea asp-for="Project.ProjectShortDesc" class="form-control border-0 shadow"></TextArea>                           
+                            <span asp-validation-for="Project.ProjectShortDesc" class="text-danger"></span>
+                        </div>
+                        <div class="py-2 col-12">
+                            <label asp-for="Project.ProjectLongDesc" class="ms-2 text-muted">Long Description</label>
+                            <TextArea asp-for="Project.ProjectLongDesc" class="form-control border-0 shadow"></TextArea>
+                            <span asp-validation-for="Project.ProjectLongDesc" class="text-danger"></span>
+                        </div>
+                        <div class="form-floating py-2 col-12">
+                            <input type="file" name="files" class="form-control border-0 shadow" multiple />
+                            <label asp-for="Project.ProjectImages" class="ms-2"></label>
+                        </div>
+                        <div class="row pt-2">
+                            <div class="col-6 col-md-3">
+                                @if (Model.Project.ProjectId != 0)
+                                {
+                                    <button type="submit" class="btn btn-primary form-control">Update</button>
+                                }
+                                else
+                                {
+                                    <button type="submit" class="btn btn-primary form-control">Create</button>
+                                }
+                            </div>
+                            <div class="col-6  col-md-3">
+                                <a asp-controller="Project" asp-action="Index" class="btn btn-outline-secondary border form-control">
+                                    Back To List
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-2">
+                    @if (Model.Project.ProjectImages != null)
+                    {
+                        foreach (var image in Model.Project.ProjectImages)
+                        {
+                            <div class="border p-1 m-2 text-center">
+                                <img src="@image.ImageUrl" width="100%" style="border-radius:5px; border:1px solid #bbb9b9" />
+                                <a asp-action="DeleteImage" class="btn btn-danger" asp-route-imageId="@image.Id">
+                                    <i class="bi bi-trash-fill"></i> Delete
+                                </a>
+                            </div>
+                        }
+                    }
+                </div>
+            </div>
+
+        </form>
+    </div>
+</div>
+
+<script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.20/summernote-bs5.min.js"></script>
+<script src="~/lib/summernote/summernote-cleaner.js"></script>
+<script src="~/js/chosen.jquery.js"></script>
+<script src="~/js/ProjectLongDesc.js"></script>
+<script src="~/js/ProjectShortDesc.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $(".chosen-select-single").chosen();
+        $(".chosen-select-multiple").chosen();
+    });
+</script>
+@section Scripts {
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+}

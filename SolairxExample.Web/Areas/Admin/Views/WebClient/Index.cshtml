@@ -1,0 +1,64 @@
+﻿@model IEnumerable<SolairxExample.Model.WebClient>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <div class="col-4"><h1>WEB CLIENTS</h1></div>
+    <div class="col-4"></div>
+    <div class="col-4"><a asp-action="Create" class="btn btn-primary">Create New</a></div>
+</div>
+<br />
+<br />
+<form method="post">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.Label("Last Name, First Name")
+                </th>
+                <th>Details</th>
+                <th>Admin</th>
+                <th>
+                    <button asp-controller="WebClients" id="delete_button_id" class="btn btn-primary btn-xs" asp-action="Index">Multiple Delete</button>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.WcId">@item.LastName, @item.FirstName</a>
+                    </td>
+                    <td>
+                        <a asp-action="Details" asp-route-id="@item.WcId">Details for @item.LastName, @item.FirstName</a>
+                    </td>
+                    <td>
+                        <a asp-action="Delete" asp-route-id="@item.WcId">Delete</a>
+                    </td>
+                    <td>
+                        <input type="checkbox" class="checkbox_class" style="position:relative;left:35px;" name="MultiD"
+                               value=@item.WcId.ToString() />
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</form>
+<script type="text/javascript">
+
+    $('#delete_button_id').prop('disabled', true); // To disable initially
+
+    $(document).on('click', '.checkbox_class', function () {
+        if ($('.checkbox_class:checked').length > 1) {
+            $('#delete_button_id').prop('disabled', false);
+        }
+        else {
+            $('#delete_button_id').prop('disabled', true);
+        }
+    }).change();
+
+</script>

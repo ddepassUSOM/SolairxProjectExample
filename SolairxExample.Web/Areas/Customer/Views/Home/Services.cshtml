@@ -1,0 +1,99 @@
+﻿@{
+    ViewBag.Title = "Services";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!-- Page Heading/Breadcrumbs -->
+
+<h1 class="mt-4 mb-3">
+    Services
+    <small>Provided</small>
+</h1>
+<ol class="breadcrumb">
+    <li class="breadcrumb-item">
+        <a href="@Url.Action("Index", "Home")">Home</a>
+    </li>
+    <li class="breadcrumb-item active">Services</li>
+</ol>
+<!-- Image Header -->
+<img class="img-fluid rounded mb-4" src="@Url.Content("~/img/SolairxServices.jpg")" alt="service image">
+<!-- Marketing Icons Section -->
+<div class="row">
+    <div class="col-lg-12 mb-12">
+        <div class="card h-100">
+            <h4 class="card-header">Residential Installation, Maintenance & Repair services</h4>
+            <div class="card-body">
+                <p class="card-text">
+                    @*<h4>SolairX Services provides the following Residential solutions and services:</h4>*@
+                    <ul>
+                        <li>Solar hybrid grid-tie systems </li>
+                        <li>Wind turbine hybrid systems</li>
+                        <li>Solar water heaters</li>
+                        <li>Off grid solar battery storage systems</li>
+                        <li>Solar street & flood lighting</li>
+                        <li>Solar pool and well pump systems</li>
+                        <li>Solar hardware ex. batteries, panels, inverters, or solar rack support hardware. </li>
+                        <li>Solar energy system maintenance services and repair. </li>
+                    </ul>
+                    Contact us today to receive a free estimate on new or replacement systems.
+                </p>
+            </div>
+            <div class="card-footer">
+                <a href="@Url.Action("Contact", "Home", new { id = 12, ComRes="true"})" class="btn btn-outline-primary">Contact Us</a>
+            </div>@*Url.Action("CreatePerson", "Person", new { id = 8,name="rachel",grade="a"});*@
+
+        </div>
+    </div>
+    <div><hr />&nbsp;</div>
+    <div class="col-lg-12 mb-12">
+        <div class="card h-100">
+            <h4 class="card-header">Commercial Installation, Maintenance & Repair services</h4>
+            <div class="card-body">
+                <p class="card-text">We provide a turnkey energy solution from project assessment, to design, to construction, and to operations & maintenance. SolairX Services will be streamlining your project and lowering your costs. We and our partners have extensive experience building rooftop, ground mounted and carport systems.</p>
+
+
+                <h4>Project Assessment</h4>
+
+                <p class="card-text">At SolairX Services, we conduct a FREE Energy Assessment of your commercial property and provide the information you need to determine if you qualify for up to a 50% or more annual return on investment and 3to5-year payback. Since every commercial property is unique, finding a solar contractor who gives a comprehensive energy assessment is imperative. </p>
+                <p>We seek to develop the optimum system that will maximize savings, suit your financial situation, and meet your business goals. Our team will perform an online survey of the property and an initial consultation to explore your concepts and discuss the viable options.</p>
+
+                <ul>
+                    <li>Preliminary Design Layout + Shading Analysis</li>
+                    <li>Customer Needs Assessment • Electrical Usage • Financing</li>
+                    <li>Design Options — Rooftop • Ground or Canopy Mounted</li>
+                    <li>Estimate Rate of Return (ROI) • Savings • Payback</li>
+                </ul>
+                <h4>Design</h4>
+                <p>We have over 25 years of experience in Electrical Engineering and have design and installed over a megawatt of solar energy solutions across Jamaica to date. We create a complete engineering design and sales proposal for your business needs.</p>
+                <ul>
+                    <li>Site Survey — Examine Location • Existing Electrical</li>
+                    <li>Select Components • Create Final Designia</li>
+                    <li>Submit Final Model and Design for Approval</li>
+                    <li>Review Final Contract • Pricing • Financing Options </li>
+                </ul>
+                <h4>Construction</h4>
+                <p>We're confident that our qualifications and experience in the solar energy field will meet your needs. Starting with the initial consultation, we begin looking ahead to the logistics required to meet your needs with a solar power plant installed to your satisfaction. Our team of professionals will be there working closely with you throughout the process to ensure there is minimal impact to your daily operations, while maintaining timely updates as to our progress. We always strive for customer satisfaction and will listen to you as a partner, not just a customer throughout the installation.</p>
+                <ul>
+                    <li>Work Planning — Avoid Workplace Interference</li>
+                    <li>Final Schedule • Select Components Staging Site</li>
+                    <li>Secure Local Permits — Building • Electrical • Utility</li>
+                    <li>Complete Construction • Utility Interconnection • Energize</li>
+                </ul>
+                <h5>Operation & maintenance</h5>
+                <p>SolairX Services provides a 1-year full-service warranty against defects in our workmanship, in addition to individual warranties on all major components. We will be there for you if there happen to be unforeseen issues as your service partner during all warranty periods and beyond. Our product suppliers employ us to resolve any equipment issues, if they happen to arise, in a timely manner to keep you online and saving money. We are your single source of contact, so you don’t need to be concerned with.</p>
+                <ul>
+                    <li>Configure Online Monitoring — SolairX Services+ Your Business</li>
+                    <li>Final Documents — Completed Warranties • Tech Sheets</li>
+                    <li>Provide Long-Term Operating and Maintenance Packages</li>
+                    <li>Training — All You Need to Fully Enjoy Your Solar System</li>
+                </ul>
+                <p>Commercial solar is a bankable way for business, large or small, to get control of rising energy costs. Let us show you how to you can turn solar savings into a benefit for your core business.</p>
+                Contact us today and we can help answer any of your questions as you consider commercial solar pricing and installation.
+            </div>
+            <div class="card-footer">
+                <a href="@Url.Action("Contact", "Home", new { id = 4, ComRes="false"})" class="btn btn-outline-primary">Contact Us</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /.row -->

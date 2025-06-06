@@ -1,0 +1,234 @@
+body {
+    padding-top: 54px;
+}
+
+@media (min-width: 992px) {
+    body {
+        padding-top: 56px;
+    }
+}
+
+.carousel-item {
+    height: 65vh;
+    min-height: 300px;
+    background: no-repeat center center scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.portfolio-item {
+    margin-bottom: 30px;
+}
+
+.navbar-brand {
+    height: 72px;
+}
+
+.navbar-brand img {
+        height: 100%;
+    }
+
+.fixed-top {
+    border-bottom: 4px solid #e5120d;
+}
+
+#maincontent {
+    margin-top: 80px;
+}
+
+footer {
+    background: #eee;
+    color: #A0A0A0; /*#e95420  #A0A0A0*/
+    padding: 0 20px 10px;
+    border-top: 4px solid #e5120d;
+    margin-top: 20px;
+    -webkit-box-shadow: 0 -1px 12px rgba(0,0,0,.4);
+    -moz-box-shadow: 0 -1px 12px rgba(0,0,0,.4);
+    box-shadow: 0 -1px 12px rgba(0,0,0,.4);
+    color: 0 -1px 12px rgba(0,0,0,.4);
+}
+
+    footer h3 {
+        color: #E4E4E4;
+        font-size: 1.3em;
+        border-bottom: 1px dotted #7C7C7C;
+    }
+
+    footer ul {
+        padding: 0;
+    }
+
+footer-navigate-section li {
+    line-height: 20px !important;
+}
+    /*footer-navigate-section li a.fnav-link {
+        color: rgba(var(--bs-link-color-rgb), var(--bs-link-opacity, 1));*/
+       /* color: #e95420;*/
+        /*text-decoration: none;
+    }*/
+
+footer-stay-connected a {
+    text-align: left;
+    text-indent: -9999px;
+    display: block;
+    width: 115px;
+    height: 40px;
+    background: url(../img/stay-connected.png);
+    -webkit-opacity: .5;
+    -moz-opacity: .5;
+    opacity: .5;
+    -webkit-transition: opacity .25s linear;
+    -moz-transition: opacity .25s linear;
+    -o-transition: opacity .25s linear;
+    -ms-transition: opacity .25s linear;
+    transition: opacity .25s linear;
+}
+
+    footer-stay-connected a:hover {
+        -webkit-opacity: 1;
+        -moz-opacity: 1;
+        opacity: 1;
+    }
+
+    footer-stay-connected a.facebook {
+        background-position: -115px 0;
+    }
+
+    footer-stay-connected a.twitter {
+        background-position: -230px 0;
+    }
+
+    footer-stay-connected a.googleplus {
+        background-position: 0 0;
+    }
+
+footer-stay-connected li {
+    text-align: center;
+}
+
+.footer-copyright {
+    text-align: center;
+    color: #7C7C7C;
+    border-top: 1px dotted #7C7C7C;
+    padding-top: 10px;
+    font-size: .9em;
+}
+.col-footer h3 {
+    color: #ccc;
+}
+
+ul.no-list-style {
+    list-style-type: none;
+    margin-left: 0;
+}
+
+.required:after {
+    content: " *";
+    font-weight: bold;
+    color: red;
+}
+
+body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select
+/*textarea*/ {
+    /*max-width: 280px;*/
+}
+
+.aligncb {
+    position: relative;
+    top: 7px;
+}
+/*.form-control[disabled],
+.form-control[readonly],
+fieldset[disabled] .form-control {
+  cursor: not-allowed;
+  background-color: #dff0d8;
+}*/
+.succesbg {
+    background-color: #dff0d8;
+}
+/* styles for validation helpers */
+.field-validation-error {
+    color: #b94a48;
+}
+
+.field-validation-valid {
+    display: none;
+}
+
+select.input-validation-error {
+    border: 1px solid #b94a48;
+}
+
+input.input-validation-error {
+    border: 1px solid #b94a48;
+}
+
+input[type="checkbox"].input-validation-error {
+    border: 1px solid #b94a48;
+}
+
+.validation-summary-errors {
+    color: #b94a48;
+}
+
+.validation-summary-valid {
+    display: none;
+}
+
+.required:after {
+    content: " *";
+    font-weight: bold;
+    color: red;
+}
+.carousel-control-prev-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='%23003366' viewBox='0 0 8 8'%3e%3cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3e%3c/svg%3e");
+}
+
+.carousel-control-next-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='%23003366' viewBox='0 0 8 8'%3e%3cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3e%3c/svg%3e");
+}
+.carousel-caption {
+    position: absolute;
+    right: 15%;
+    bottom: 20px;
+    left: 15%;
+    z-index: 10;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: #000;
+    text-align: center;
+}
+.naaaBredren {
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 0;
+    width: 0;
+    z-index: -1;
+}
+li::marker {
+    font-size: 0;
+}

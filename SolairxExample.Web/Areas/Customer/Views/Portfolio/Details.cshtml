@@ -1,0 +1,106 @@
+﻿@model ProjectVM
+
+@{
+    ViewData["Title"] = Html.DisplayFor(model => model.Project.ProjectName);
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<div>
+    <h1 class="mt-4 mb-3">
+        @Html.DisplayFor(model => model.Project.ProjectName)
+    </h1>
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+            <a href="@Url.Action("Index", "Home")">Home</a>
+        </li>
+        <li class="breadcrumb-item">
+            <a href="@Url.Action("Index", "Portfolio")">Portfolio</a>
+        </li>
+        <li class="breadcrumb-item active">  @Html.DisplayFor(model => model.Project.ProjectName)</li>
+    </ol>
+    <!-- Portfolio Item Row -->
+    <div class="row">
+        <div class="col-md-8">
+            <div class="col-12 ">
+
+
+                @if (Model.Project.ProjectImages != null && Model.Project.ProjectImages.Count > 0)
+                {
+                    <div id="carouselExampleIndicators" class="carousel slide">
+                        <div class="carousel-indicators">
+                            @foreach (var imageWithIndex in
+                           Model.Project.ProjectImages
+                           .Select((image, index) => new { Image = image, Index = index }))
+                            {
+                                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="@imageWithIndex.Index"
+                                        class="@(imageWithIndex.Index==0?"active":"" )" aria-current="true" aria-label="Slide 1"></button>
+                            }
+
+                        </div>
+                        <div class="carousel-inner">
+                            @foreach (var imageWithIndex in
+                           Model.Project.ProjectImages
+                           .Select((image, index) => new { Image = image, Index = index }))
+                            {
+                                <div class="@(imageWithIndex.Index==0?"carousel-item active":"carousel-item")">
+                                    <img src="@imageWithIndex.Image.ImageUrl" class="d-block w-100" alt="...">
+                                </div>
+                            }
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                }
+            </div>
+        </div>
+        <div class="col-md-4">
+            <h3 class="my-3">Project Description</h3>
+            <p>@Html.Raw(Model.Project.ProjectLongDesc)</p>
+            <h3 class="my-3">Project Details</h3>
+            <ul>
+                <li>Lorem Ipsum</li>
+                <li>Dolor Sit Amet</li>
+                <li>Consectetur</li>
+                <li>Adipiscing Elit</li>
+            </ul>
+        </div>
+    </div>
+    <!-- /.row -->
+    <!-- Related Projects Row -->
+    <h3 class="my-4">Related Projects</h3>
+    <div class="row">
+        <div class="col-md-3 col-sm-6 mb-4">
+           @*  <a href="#">
+                <img class="img-fluid" src="@Html.DisplayFor(model => model.ProjectImage2)" alt="">
+            </a> *@
+        </div>
+        <div class="col-md-3 col-sm-6 mb-4">
+           @*  <a href="#">
+                <img class="img-fluid" src="@Html.DisplayFor(model => model.ProjectImage3)" alt="">
+            </a> *@
+        </div>
+        <div class="col-md-3 col-sm-6 mb-4">
+            @* <a href="#">
+                <img class="img-fluid" src="https://via.placeholder.com/500x300.png" alt="">
+            </a> *@
+        </div>
+        <div class="col-md-3 col-sm-6 mb-4">
+           @*  <a href="#">
+                <img class="img-fluid" src="https://via.placeholder.com/500x300.png" alt="">
+            </a> *@
+        </div>
+    </div>
+
+    
+</div>
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>

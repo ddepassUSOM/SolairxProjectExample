@@ -1,0 +1,51 @@
+﻿@{
+    ViewBag.Title = "About";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!-- Page Heading/Breadcrumbs -->
+<h1 class="mt-4 mb-3">
+    About
+    <small>Us</small>
+</h1>
+<ol class="breadcrumb">
+    <li class="breadcrumb-item">
+        <a href="@Url.Action("Index", "Home")">Home</a>
+    </li>
+    <li class="breadcrumb-item active">About</li>
+</ol>
+<!-- Intro Content -->
+<div class="row">
+    <div class="col-lg-6">
+        @*<img class="img-fluid rounded mb-4" src="@Url.Content("~/img/AboutImage.jpg")" alt="">*@
+        <img class="img-fluid rounded mb-4" src="~/img/AboutImage.jpg" alt="solar">
+        <!--https://drive.google.com/uc?export=view&id=1B2PNpzsBnMbqki1_YujYNALZuuB0hgyF-->
+        
+    </div>
+    <div class="col-lg-6">
+        <h2>WHO WE ARE?</h2>
+        <p>
+            SolairX Services Limited is an alternative energy company with over 25 years engineering experience.
+            <ul>
+                <li>We have  NABCEP Certification.</li>
+                <li> We have in house Electrical Engineers.</li>
+                <li>We provide residential and commercial energy solutions.</li>
+                <li> We are authorized to install some of the  highest-rated solar energy solutions in the Caribbean.</li>
+            </ul>
+            Safe, reliable, cost effective energy solutions are what we provide.
+        </p>
+        <h2>Mission</h2>
+        <p>
+            To provide safe, reliable , cost effective alternative energy solutions to every customer. To customize all energy solutions to the needs of each client.
+        </p>
+        <h2>Core Values</h2>
+        <p>
+            Our responsibility to each customer is to provide customer centerd service. We focus on creating lasting relationships built on reliability, accountability and most importantly trust. We strive to treat everyone with integrity and respect.
+        </p>
+        <h2>Vision</h2>
+        <p>
+            To provide customer centered alternative energy solutions customized to each customers needs in the Caribbean and beyond.
+        </p>
+    </div>
+</div>
+<!-- /.row -->
